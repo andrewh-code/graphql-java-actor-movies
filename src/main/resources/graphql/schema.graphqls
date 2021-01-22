@@ -1,0 +1,30 @@
+schema {
+    query: Query,
+    mutation: Mutation
+}
+
+type Actor {
+    actorId: ID!
+    firstName: String,
+    lastName: String,
+    dob: String,
+    address: String,
+    filmId: Int,
+    film: Film
+}
+
+type Film {
+    filmId: ID!
+    name: String,
+    launchYear: String
+}
+
+type Query {
+    getAllActors:[Actor],
+    getActorById(id: Int): Actor
+    getActorByFirstName(name: String): [Actor]
+}
+
+type Mutation {
+    updateAddress(id: Int, address: String): Actor
+}
