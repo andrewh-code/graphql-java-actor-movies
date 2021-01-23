@@ -20,3 +20,49 @@ The project was created in IntelliJ, so fire that up if you have it. Run the Act
 Port is on the default apache tomcat port 8080
 to execute the graphql queries/mutations, go to the graphiql endpoint:
 http://localhost:8080/graphiql
+
+
+### example graphql endpoints
+http://localhost:8080/graphiql
+
+getAllActors
+```
+getAllActors{
+    actorId
+    firstName
+    lastName
+    address
+}
+```
+getActorByFirstName
+```
+getActorByFirstName(firstName: String){
+    id
+    name
+}
+```
+retrieveActor
+```
+retrieveActor{
+      id
+      name
+      dob
+      film {
+          id
+          name
+      }
+}
+```
+
+updateAddress
+```
+mutation{
+    updateAddress(id:2, address: "125 faker street"){
+    actorId
+    firstName
+    lastName
+    address
+    }
+}
+```
+
